@@ -81,7 +81,7 @@
                         @forelse($orders as $order)
                             <tr>
                                 <td>{{ $order->code }}</td>
-                                <td>{{ $order->export_date->format('d/m/Y') }}</td>
+                                <td>{{ $order->export_date ? $order->export_date->format('d/m/Y') : '-' }}</td>
                                 <td>{{ $order->recipient ?? '-' }}</td>
                                 <td>
                                     @if($order->reason == 'sale')

@@ -64,7 +64,7 @@
                                 <tr>
                                     <td>{{ $order->code }}</td>
                                     <td>{{ $order->recipient ?? '-' }}</td>
-                                    <td>{{ $order->export_date->format('d/m/Y') }}</td>
+                                    <td>{{ $order->export_date ? $order->export_date->format('d/m/Y') : '-' }}</td>
                                     <td>
                                         @php
                                             $reasons = ['sale' => 'Bán hàng', 'transfer' => 'Luân chuyển', 'return' => 'Trả hàng', 'other' => 'Khác'];

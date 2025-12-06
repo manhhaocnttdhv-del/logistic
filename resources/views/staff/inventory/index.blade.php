@@ -66,7 +66,7 @@
                                         </span>
                                     </td>
                                     <td>{{ $inventory->product->min_stock }} {{ $inventory->product->unit }}</td>
-                                    <td>{{ $inventory->last_updated_date->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $inventory->last_updated_date ? $inventory->last_updated_date->format('d/m/Y H:i') : '-' }}</td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#checkModal{{ $inventory->id }}">
                                             <i class="bi bi-pencil"></i> Cập nhật

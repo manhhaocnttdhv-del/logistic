@@ -36,7 +36,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày xuất</th>
-                                <td>{{ $exportOrder->export_date->format('d/m/Y') }}</td>
+                                <td>{{ $exportOrder->export_date ? $exportOrder->export_date->format('d/m/Y') : '-' }}</td>
                             </tr>
                             <tr>
                                 <th>Người nhận</th>
@@ -84,7 +84,7 @@
                             @if($exportOrder->confirmed_at)
                                 <tr>
                                     <th>Người xác nhận</th>
-                                    <td>{{ $exportOrder->confirmer->name }} - {{ $exportOrder->confirmed_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $exportOrder->confirmer->name }} - {{ $exportOrder->confirmed_at ? $exportOrder->confirmed_at->format('d/m/Y H:i') : '-' }}</td>
                                 </tr>
                             @endif
                             <tr>

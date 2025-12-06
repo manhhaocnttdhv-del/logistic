@@ -27,7 +27,7 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Ngày xuất <span class="text-danger">*</span></label>
-                                <input type="date" name="export_date" class="form-control @error('export_date') is-invalid @enderror" value="{{ old('export_date', $exportOrder->export_date->format('Y-m-d')) }}" required>
+                                <input type="date" name="export_date" class="form-control @error('export_date') is-invalid @enderror" value="{{ old('export_date', $exportOrder->export_date ? $exportOrder->export_date->format('Y-m-d') : '') }}" required>
                                 @error('export_date')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

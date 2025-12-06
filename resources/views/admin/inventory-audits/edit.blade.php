@@ -49,7 +49,7 @@
                                 <label class="form-label fw-semibold">
                                     <i class="bi bi-calendar-event me-1 text-primary"></i>Ngày kiểm toán <span class="text-danger">*</span>
                                 </label>
-                                <input type="date" name="audit_date" class="form-control shadow-sm @error('audit_date') is-invalid @enderror" value="{{ old('audit_date', $inventoryAudit->audit_date->format('Y-m-d')) }}" required style="border-radius: 8px;">
+                                <input type="date" name="audit_date" class="form-control shadow-sm @error('audit_date') is-invalid @enderror" value="{{ old('audit_date', $inventoryAudit->audit_date ? $inventoryAudit->audit_date->format('Y-m-d') : '') }}" required style="border-radius: 8px;">
                                 @error('audit_date')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

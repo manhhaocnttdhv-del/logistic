@@ -32,7 +32,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <strong>Ngày xuất:</strong> {{ $order->export_date->format('d/m/Y') }}
+                        <strong>Ngày xuất:</strong> {{ $order->export_date ? $order->export_date->format('d/m/Y') : '-' }}
                     </div>
                     <div class="col-md-6">
                         <strong>Lý do:</strong>

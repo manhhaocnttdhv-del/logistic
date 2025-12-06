@@ -63,7 +63,7 @@
                             @if($materialRequest->approved_by)
                                 <tr>
                                     <th>Người duyệt</th>
-                                    <td>{{ $materialRequest->approver->name }} - {{ $materialRequest->approved_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $materialRequest->approver->name }} - {{ $materialRequest->approved_at ? $materialRequest->approved_at->format('d/m/Y H:i') : '-' }}</td>
                                 </tr>
                             @endif
                             @if($materialRequest->rejection_reason)
@@ -88,7 +88,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày tạo</th>
-                                <td>{{ $materialRequest->created_at->format('d/m/Y H:i') }}</td>
+                                <td>{{ $materialRequest->created_at ? $materialRequest->created_at->format('d/m/Y H:i') : '-' }}</td>
                             </tr>
                         </table>
                     </div>

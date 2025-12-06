@@ -180,7 +180,7 @@
                                 <td>
                                     @if($task->due_date)
                                         <div class="{{ $isOverdue ? 'text-danger fw-bold' : ($isDueSoon ? 'text-warning fw-semibold' : '') }}">
-                                            {{ $task->due_date->format('d/m/Y') }}
+                                            {{ $task->due_date ? $task->due_date->format('d/m/Y') : '-' }}
                                             @if($isOverdue)
                                                 <br><small class="badge bg-danger">Quá hạn</small>
                                             @elseif($isDueSoon)

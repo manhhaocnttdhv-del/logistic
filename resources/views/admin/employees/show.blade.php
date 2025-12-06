@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày tạo</th>
-                                <td>{{ $employee->created_at->format('d/m/Y H:i') }}</td>
+                                <td>{{ $employee->created_at ? $employee->created_at->format('d/m/Y H:i') : '-' }}</td>
                             </tr>
                         </table>
                     </div>
@@ -183,9 +183,9 @@
                                                 <td>
                                                     @if($task->due_date)
                                                         @if($task->due_date < now()->toDateString() && $task->status != 'completed')
-                                                            <span class="text-danger">{{ $task->due_date->format('d/m/Y') }}</span>
+                                                            <span class="text-danger">{{ $task->due_date ? $task->due_date->format('d/m/Y') : '-' }}</span>
                                                         @else
-                                                            {{ $task->due_date->format('d/m/Y') }}
+                                                            {{ $task->due_date ? $task->due_date->format('d/m/Y') : '-' }}
                                                         @endif
                                                     @else
                                                         -

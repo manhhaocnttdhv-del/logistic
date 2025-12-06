@@ -40,7 +40,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày kiểm toán</th>
-                                <td>{{ $inventoryAudit->audit_date->format('d/m/Y') }}</td>
+                                <td>{{ $inventoryAudit->audit_date ? $inventoryAudit->audit_date->format('d/m/Y') : '-' }}</td>
                             </tr>
                             <tr>
                                 <th>Loại kiểm toán</th>
@@ -79,7 +79,7 @@
                             @if($inventoryAudit->confirmed_at)
                                 <tr>
                                     <th>Người xác nhận</th>
-                                    <td>{{ $inventoryAudit->confirmer->name }} - {{ $inventoryAudit->confirmed_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $inventoryAudit->confirmer->name }} - {{ $inventoryAudit->confirmed_at ? $inventoryAudit->confirmed_at->format('d/m/Y H:i') : '-' }}</td>
                                 </tr>
                             @endif
                             <tr>

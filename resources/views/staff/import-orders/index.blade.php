@@ -63,7 +63,7 @@
                                 <tr>
                                     <td>{{ $order->code }}</td>
                                     <td>{{ $order->supplier->name ?? '-' }}</td>
-                                    <td>{{ $order->import_date->format('d/m/Y') }}</td>
+                                    <td>{{ $order->import_date ? $order->import_date->format('d/m/Y') : '-' }}</td>
                                     <td>{{ number_format($order->total_amount, 0, ',', '.') }} đ</td>
                                     <td>
                                         @if($order->status == 'pending')

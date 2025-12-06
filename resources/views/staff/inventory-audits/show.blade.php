@@ -32,7 +32,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <strong>Ngày kiểm toán:</strong> {{ $audit->audit_date->format('d/m/Y') }}
+                        <strong>Ngày kiểm toán:</strong> {{ $audit->audit_date ? $audit->audit_date->format('d/m/Y') : '-' }}
                     </div>
                     <div class="col-md-6">
                         <strong>Trạng thái:</strong>

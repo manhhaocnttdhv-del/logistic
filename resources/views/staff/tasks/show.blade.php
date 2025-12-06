@@ -84,7 +84,7 @@
                                 $isDueSoon = $task->due_date->isToday();
                             @endphp
                             <div class="ms-2 d-inline-block {{ $isOverdue ? 'text-danger fw-bold' : ($isDueSoon ? 'text-warning fw-semibold' : '') }}">
-                                {{ $task->due_date->format('d/m/Y') }}
+                                {{ $task->due_date ? $task->due_date->format('d/m/Y') : '-' }}
                                 @if($isOverdue)
                                     <span class="badge bg-danger ms-1">Quá hạn</span>
                                 @elseif($isDueSoon)
@@ -123,14 +123,14 @@
                 @if($task->started_at)
                 <div class="mb-3">
                     <strong><i class="bi bi-play-circle me-1"></i>Bắt đầu lúc:</strong>
-                    <span class="ms-2">{{ $task->started_at->format('d/m/Y H:i') }}</span>
+                    <span class="ms-2">{{ $task->started_at ? $task->started_at->format('d/m/Y H:i') : '-' }}</span>
                 </div>
                 @endif
                 
                 @if($task->completed_at)
                 <div class="mb-3">
                     <strong><i class="bi bi-check-circle me-1"></i>Hoàn thành lúc:</strong>
-                    <span class="ms-2">{{ $task->completed_at->format('d/m/Y H:i') }}</span>
+                    <span class="ms-2">{{ $task->completed_at ? $task->completed_at->format('d/m/Y H:i') : '-' }}</span>
                 </div>
                 @endif
                 

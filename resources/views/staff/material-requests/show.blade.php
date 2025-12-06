@@ -78,7 +78,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày tạo</th>
-                                <td>{{ $request->created_at->format('d/m/Y H:i') }}</td>
+                                <td>{{ $request->created_at ? $request->created_at->format('d/m/Y H:i') : '-' }}</td>
                             </tr>
                         </table>
                     </div>

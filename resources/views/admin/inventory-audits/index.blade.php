@@ -96,7 +96,7 @@
                                 <tr>
                                     <td><strong>{{ $audit->code }}</strong></td>
                                     <td>{{ $audit->warehouse->name ?? '-' }}</td>
-                                    <td>{{ $audit->audit_date->format('d/m/Y') }}</td>
+                                    <td>{{ $audit->audit_date ? $audit->audit_date->format('d/m/Y') : '-' }}</td>
                                     <td>
                                         @if($audit->type == 'full')
                                             <span class="badge bg-primary">Toàn bộ</span>

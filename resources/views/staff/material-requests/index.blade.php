@@ -78,7 +78,7 @@
                                             <span class="badge bg-success">Đã chuyển đổi</span>
                                         @endif
                                     </td>
-                                    <td>{{ $request->created_at->format('d/m/Y') }}</td>
+                                    <td>{{ $request->created_at ? $request->created_at->format('d/m/Y') : '-' }}</td>
                                     <td>
                                         <a href="{{ route('staff.material-requests.show', $request) }}" class="btn btn-sm btn-info">
                                             <i class="bi bi-eye"></i> Xem

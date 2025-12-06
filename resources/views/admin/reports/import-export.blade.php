@@ -99,7 +99,7 @@
                             @foreach($imports as $import)
                                 <tr>
                                     <td><a href="{{ route('admin.import-orders.show', $import) }}" class="text-primary">{{ $import->code }}</a></td>
-                                    <td>{{ $import->import_date->format('d/m/Y') }}</td>
+                                    <td>{{ $import->import_date ? $import->import_date->format('d/m/Y') : '-' }}</td>
                                     <td>{{ $import->supplier->name ?? ($import->from_warehouse ?? '-') }}</td>
                                     <td>
                                         @if($import->source == 'supplier')
@@ -144,7 +144,7 @@
                             @foreach($exports as $export)
                                 <tr>
                                     <td><a href="{{ route('admin.export-orders.show', $export) }}" class="text-primary">{{ $export->code }}</a></td>
-                                    <td>{{ $export->export_date->format('d/m/Y') }}</td>
+                                    <td>{{ $export->export_date ? $export->export_date->format('d/m/Y') : '-' }}</td>
                                     <td>{{ $export->recipient ?? '-' }}</td>
                                     <td>
                                         @if($export->reason == 'sale')

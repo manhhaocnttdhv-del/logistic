@@ -40,7 +40,7 @@
                             </tr>
                             <tr>
                                 <th>Ngày nhập</th>
-                                <td>{{ $importOrder->import_date->format('d/m/Y') }}</td>
+                                <td>{{ $importOrder->import_date ? $importOrder->import_date->format('d/m/Y') : '-' }}</td>
                             </tr>
                             <tr>
                                 <th>Người tạo</th>
@@ -67,7 +67,7 @@
                             @if($importOrder->confirmed_at)
                                 <tr>
                                     <th>Người xác nhận</th>
-                                    <td>{{ $importOrder->confirmer->name }} - {{ $importOrder->confirmed_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $importOrder->confirmer->name }} - {{ $importOrder->confirmed_at ? $importOrder->confirmed_at->format('d/m/Y H:i') : '-' }}</td>
                                 </tr>
                             @endif
                             <tr>

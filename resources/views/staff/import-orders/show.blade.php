@@ -32,7 +32,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <strong>Ngày nhập:</strong> {{ $order->import_date->format('d/m/Y') }}
+                        <strong>Ngày nhập:</strong> {{ $order->import_date ? $order->import_date->format('d/m/Y') : '-' }}
                     </div>
                     <div class="col-md-6">
                         <strong>Trạng thái:</strong>

@@ -115,7 +115,7 @@
                                 </td>
                                 <td>{{ number_format($productValue, 0, ',', '.') }} đ</td>
                                 <td>{{ $inventory->product->unit }}</td>
-                                <td>{{ $inventory->last_updated_date->format('d/m/Y H:i') }}</td>
+                                <td>{{ $inventory->last_updated_date ? $inventory->last_updated_date->format('d/m/Y H:i') : '-' }}</td>
                             </tr>
                         @empty
                             <tr>

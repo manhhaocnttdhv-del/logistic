@@ -81,7 +81,7 @@
                             <tr>
                                 <td>{{ $order->code }}</td>
                                 <td>{{ $order->supplier->name }}</td>
-                                <td>{{ $order->import_date->format('d/m/Y') }}</td>
+                                <td>{{ $order->import_date ? $order->import_date->format('d/m/Y') : '-' }}</td>
                                 <td>{{ $order->creator->name }}</td>
                                 <td>{{ $order->assignedStaff->name ?? '-' }}</td>
                                 <td>{{ number_format($order->total_amount, 0, ',', '.') }} đ</td>

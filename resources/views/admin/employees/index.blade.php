@@ -88,7 +88,7 @@
                                         <span class="badge bg-secondary">Đã khóa</span>
                                     @endif
                                 </td>
-                                <td>{{ $employee->created_at->format('d/m/Y') }}</td>
+                                <td>{{ $employee->created_at ? $employee->created_at->format('d/m/Y') : '-' }}</td>
                                 <td>
                                     <a href="{{ route('admin.employees.show', $employee) }}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>

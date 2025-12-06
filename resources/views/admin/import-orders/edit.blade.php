@@ -76,7 +76,7 @@
                                 <label class="form-label fw-semibold">
                                     <i class="bi bi-calendar-event me-1 text-primary"></i>Ngày nhập <span class="text-danger">*</span>
                                 </label>
-                                <input type="date" name="import_date" class="form-control shadow-sm @error('import_date') is-invalid @enderror" value="{{ old('import_date', $importOrder->import_date->format('Y-m-d')) }}" required style="border-radius: 8px;">
+                                <input type="date" name="import_date" class="form-control shadow-sm @error('import_date') is-invalid @enderror" value="{{ old('import_date', $importOrder->import_date ? $importOrder->import_date->format('Y-m-d') : '') }}" required style="border-radius: 8px;">
                                 @error('import_date')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
