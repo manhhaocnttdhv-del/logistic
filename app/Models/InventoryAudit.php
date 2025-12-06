@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Carbon\Carbon;
 
 class InventoryAudit extends Model
 {
@@ -59,6 +60,28 @@ class InventoryAudit extends Model
         return $this->hasMany(InventoryAuditItem::class);
     }
 
+    // Accessors
+    public function getAuditDateAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
+    }
+    
     // Helper methods
     public function generateCode(): string
     {

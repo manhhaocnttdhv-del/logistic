@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Carbon\Carbon;
 
 class ExportOrder extends Model
 {
@@ -58,6 +59,28 @@ class ExportOrder extends Model
     public function items(): HasMany
     {
         return $this->hasMany(ExportOrderItem::class);
+    }
+    
+    // Accessors
+    public function getExportDateAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
     }
     
     // Helper methods
