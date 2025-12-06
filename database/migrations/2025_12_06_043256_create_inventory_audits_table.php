@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('inventory_audits', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique()->comment('Mã phiếu kiểm toán');
-            $table->foreignId('warehouse_id')->nullable()->constrained('warehouses')->onDelete('set null')->comment('Kho kiểm toán');
+            $table->unsignedBigInteger('warehouse_id')->nullable()->comment('Kho kiểm toán');
             $table->foreignId('created_by')->constrained('users')->onDelete('restrict')->comment('Người tạo');
             $table->foreignId('assigned_to')->nullable()->constrained('users')->onDelete('set null')->comment('Người được giao');
             $table->date('audit_date')->comment('Ngày kiểm toán');
@@ -29,6 +29,13 @@ return new class extends Migration
             $table->timestamp('confirmed_at')->nullable()->comment('Thời gian xác nhận');
             $table->timestamps();
         });
+        
+        // Tạo foreign key sau khi bảng warehouses đã tồn tại
+        if (Schema::hasTable('warehouses')) {
+            Schema::table('inventory_audits', function (Blueprint $table) {
+                $table->foreign('warehouse_id')->references('id')->on('warehouses')->onDelete('set null');
+            });
+        }
     }
 
     /**
@@ -36,6 +43,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('inventory_audits', function (Blueprint $table) {
+            $table->dropForeign(['warehouse_id']);
+        });
         Schema::dropIfExists('inventory_audits');
     }
 };

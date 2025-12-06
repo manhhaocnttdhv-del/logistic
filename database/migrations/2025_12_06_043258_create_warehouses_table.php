@@ -44,6 +44,17 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Drop foreign keys first if they exist
+        if (Schema::hasTable('inventory_audits')) {
+            Schema::table('inventory_audits', function (Blueprint $table) {
+                $table->dropForeign(['warehouse_id']);
+            });
+        }
+        if (Schema::hasTable('inventory')) {
+            Schema::table('inventory', function (Blueprint $table) {
+                $table->dropForeign(['warehouse_id']);
+            });
+        }
         Schema::dropIfExists('warehouses');
     }
 };
