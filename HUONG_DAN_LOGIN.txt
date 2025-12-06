@@ -82,6 +82,12 @@ Chức năng: Quản lý toàn bộ hệ thống
     → Vào: Phiếu Nhập → Tạo phiếu nhập
     → Chọn nhà cung cấp, sản phẩm, số lượng
     → Phân công nhân viên (hoặc để tự động)
+  
+  ✓ Cách 2: Nhân viên tự tạo
+    → Login với tài khoản staff
+    → Vào: Phiếu Nhập của tôi → Tạo phiếu nhập
+    → Chọn nhà cung cấp, sản phẩm, số lượng
+    → Tự động gán cho chính nhân viên đó
 
 📤 PHIẾU XUẤT (Export Order):
   ✓ Cách 1: Admin tạo trực tiếp
@@ -89,10 +95,27 @@ Chức năng: Quản lý toàn bộ hệ thống
     → Chọn sản phẩm, số lượng
     → Phân công nhân viên (hoặc để tự động)
   
-  ✓ Cách 2: Tạo từ Yêu cầu Vật tư
+  ✓ Cách 2: Nhân viên tự tạo
+    → Login với tài khoản staff
+    → Vào: Phiếu Xuất của tôi → Tạo phiếu xuất
+    → Chọn sản phẩm, số lượng
+    → Tự động gán cho chính nhân viên đó
+  
+  ✓ Cách 3: Tạo từ Yêu cầu Vật tư
     → Admin duyệt yêu cầu vật tư
     → Click "Duyệt và tạo phiếu xuất"
     → Hệ thống tự động tạo phiếu xuất
+
+📋 YÊU CẦU VẬT TƯ (Material Request):
+  ✓ Cách 1: Admin tạo
+    → Vào: Yêu cầu Vật tư → Tạo yêu cầu mới
+    → Chọn người yêu cầu, sản phẩm, số lượng
+  
+  ✓ Cách 2: Nhân viên tự tạo
+    → Login với tài khoản staff
+    → Vào: Yêu cầu Vật tư của tôi → Tạo yêu cầu mới
+    → Chọn sản phẩm, số lượng
+    → Gửi yêu cầu (chờ Admin duyệt)
 
 
 ═══════════════════════════════════════════════════════════════
@@ -100,6 +123,8 @@ Chức năng: Quản lý toàn bộ hệ thống
 ═══════════════════════════════════════════════════════════════
 
 📦 QUY TRÌNH 1: NHẬP HÀNG
+
+CÁCH 1: Admin tạo phiếu nhập
 ───────────────────────────────────────────────────────────────
 1. Login Admin (admin@example.com)
 2. Vào: Phiếu Nhập → Tạo phiếu nhập
@@ -112,6 +137,17 @@ Chức năng: Quản lý toàn bộ hệ thống
 8. Vào: Phiếu Nhập của tôi
 9. Click "Bắt đầu xử lý" → "Hoàn thành"
 10. ✅ Tồn kho tự động tăng
+
+
+CÁCH 2: Nhân viên tự tạo phiếu nhập
+───────────────────────────────────────────────────────────────
+1. Login Nhân viên nhập kho (staff1@example.com)
+2. Vào: Phiếu Nhập của tôi → Tạo phiếu nhập
+3. Chọn nhà cung cấp, sản phẩm, số lượng
+4. Click "Lưu phiếu nhập"
+5. ✅ Phiếu được tạo và tự động gán cho chính nhân viên đó
+6. Click "Bắt đầu xử lý" → "Hoàn thành"
+7. ✅ Tồn kho tự động tăng
 
 
 📤 QUY TRÌNH 2: XUẤT HÀNG
@@ -129,6 +165,17 @@ CÁCH 1: Admin tạo phiếu xuất trực tiếp
 8. Vào: Phiếu Xuất của tôi
 9. Click "Bắt đầu xử lý" → "Hoàn thành"
 10. ✅ Tồn kho tự động giảm
+
+
+CÁCH 1B: Nhân viên tự tạo phiếu xuất
+───────────────────────────────────────────────────────────────
+1. Login Nhân viên xuất kho (staff2@example.com)
+2. Vào: Phiếu Xuất của tôi → Tạo phiếu xuất
+3. Chọn sản phẩm, số lượng
+4. Click "Lưu phiếu xuất"
+5. ✅ Phiếu được tạo và tự động gán cho chính nhân viên đó
+6. Click "Bắt đầu xử lý" → "Hoàn thành"
+7. ✅ Tồn kho tự động giảm
 
 
 CÁCH 2: Tạo phiếu xuất từ Yêu cầu Vật tư (Material Request)

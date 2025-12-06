@@ -9,6 +9,11 @@
             <div class="col-sm-6">
                 <h1 class="m-0">Phiếu Nhập của tôi</h1>
             </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ route('staff.import-orders.create') }}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle me-1"></i>Tạo phiếu nhập
+                </a>
+            </div>
         </div>
     </div>
 </div>

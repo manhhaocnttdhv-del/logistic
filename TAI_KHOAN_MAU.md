@@ -84,6 +84,8 @@ Nhiệm vụ: Hỗ trợ các công việc tổng hợp
 4. Click **Lưu**
 
 #### B. Tạo Phiếu Nhập (Import Order)
+
+**Cách 1: Admin tạo trực tiếp**
 1. Vào menu **Phiếu Nhập** → **Tạo phiếu nhập**
 2. Chọn:
    - Nguồn nhập: `Từ nhà cung cấp`
@@ -96,9 +98,22 @@ Nhiệm vụ: Hỗ trợ các công việc tổng hợp
 4. Click **Tạo phiếu**
 5. **Kết quả:** Hệ thống tự động phân công cho nhân viên nhập kho (staff1@example.com)
 
+**Cách 2: Nhân viên tự tạo**
+1. Login với tài khoản staff (ví dụ: `staff1@example.com`)
+2. Vào menu **Phiếu Nhập của tôi** → Click **Tạo phiếu nhập**
+3. Chọn:
+   - Nguồn nhập: `Từ nhà cung cấp`
+   - Nhà cung cấp: Chọn một nhà cung cấp
+   - Ngày nhập: Hôm nay
+4. Thêm sản phẩm:
+   - Click **Thêm hàng**
+   - Chọn sản phẩm, nhập số lượng, đơn giá
+5. Click **Lưu phiếu nhập**
+6. **Kết quả:** Phiếu được tạo và tự động gán cho chính nhân viên đó
+
 #### C. Tạo Phiếu Xuất (Export Order)
 
-**Cách 1: Tạo trực tiếp**
+**Cách 1: Admin tạo trực tiếp**
 1. Vào menu **Phiếu Xuất** → **Tạo phiếu xuất**
 2. Chọn:
    - Ngày xuất: Hôm nay
@@ -107,7 +122,18 @@ Nhiệm vụ: Hỗ trợ các công việc tổng hợp
 4. Click **Tạo phiếu**
 5. **Kết quả:** Hệ thống tự động phân công cho nhân viên xuất kho (staff2@example.com)
 
-**Cách 2: Tạo từ Yêu cầu Vật tư (Material Request)**
+**Cách 2: Nhân viên tự tạo**
+1. Login với tài khoản staff (ví dụ: `staff2@example.com`)
+2. Vào menu **Phiếu Xuất của tôi** → Click **Tạo phiếu xuất**
+3. Chọn:
+   - Ngày xuất: Hôm nay
+   - Lý do xuất: Chọn lý do
+   - Người nhận: (tùy chọn)
+4. Thêm sản phẩm cần xuất
+5. Click **Lưu phiếu xuất**
+6. **Kết quả:** Phiếu được tạo và tự động gán cho chính nhân viên đó
+
+**Cách 3: Tạo từ Yêu cầu Vật tư (Material Request)**
 1. Vào menu **Yêu cầu Vật tư** → **Danh sách yêu cầu**
 2. Tìm yêu cầu có trạng thái **Chờ duyệt**
 3. Click **Xem** để xem chi tiết
