@@ -80,6 +80,27 @@ class ImportOrder extends Model
         return $value;
     }
     
+    public function getConfirmedAtAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
+    }
+    
     // Helper methods
     public function getTotalAmountAttribute(): float
     {

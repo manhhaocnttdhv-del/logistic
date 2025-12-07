@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Carbon\Carbon;
 
 class Task extends Model
 {
@@ -30,6 +31,70 @@ class Task extends Model
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
         ];
+    }
+    
+    // Accessors
+    public function getDueDateAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
+    }
+    
+    public function getStartedAtAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
+    }
+    
+    public function getCompletedAtAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        
+        if ($value instanceof Carbon) {
+            return $value;
+        }
+        
+        if (is_string($value)) {
+            try {
+                return Carbon::parse($value);
+            } catch (\Exception $e) {
+                return null;
+            }
+        }
+        
+        return $value;
     }
     
     // Relationships
